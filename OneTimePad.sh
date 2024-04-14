@@ -99,7 +99,8 @@ generate(){
 	echo "Creating the pad: $file with the rough size of $padsize charecters."
 
 
-	while [ $(wc -c pad | awk '{print $1}') -lt $((padsize*3)) ]; do 
+	#while [ $(wc -c pad | awk '{print $1}') -lt $((padsize*3)) ]; do 
+	while [ $(($(wc -c ${file} | awk '{print $1}'))) -lt $((padsize*3)) ]; do 
 		od  -N1000 -d /dev/urandom |sha512sum| egrep -o '[0-9.]+' | tr -d "\n" 
 	done > "$file"
 }
