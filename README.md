@@ -20,4 +20,4 @@ This program can encrypt, decrypt and generate a one time pad
 Examples:
 To genrate a pad of 1,000 charecters: bash onetimepad.sh -g -f pad.txt -p 1000
 To encrypt using pad.txt: bash onetimepad.sh -e -c 'Hello World' -f pad
-To decrypt a string using pad.txt: 
+To decrypt a string using pad.txt: /OneTimePad.sh -d -c "(Cypher text)"  -f pad.txt
